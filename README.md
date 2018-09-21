@@ -2,6 +2,8 @@
 
 Switch between kubernates contexts easily
 
+[![Build Status](https://travis-ci.org/Niraj-Fonseka/SetKubeConfig.svg?branch=master)](https://travis-ci.org/Niraj-Fonseka/SetKubeConfig)
+
 ## Installation 
 ```
 go get -u github.com/Niraj-Fonseka/SetKubeConfig
