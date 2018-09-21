@@ -1,6 +1,6 @@
 # SetKubeConfig
 
-Switch between kubernates contexts easily
+Switch between Kubernetes contexts easily
 
 [![Build Status](https://travis-ci.org/Niraj-Fonseka/SetKubeConfig.svg?branch=master)](https://travis-ci.org/Niraj-Fonseka/SetKubeConfig)
 
