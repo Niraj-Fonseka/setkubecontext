@@ -95,7 +95,6 @@ func (c *KubernatesConfigView) InvokeUserPick() {
 		log.Fatal(err)
 	}
 
-	fmt.Println(len(c.ClusterNameList))
 	if numberToInt < len(c.ClusterNameList) && !(numberToInt > len(c.ClusterNameList)) && numberToInt >= 0 {
 		fmt.Println("Picked : ", numberToInt)
 		c.SelectedClusterName = c.ClusterNameList[numberToInt]
