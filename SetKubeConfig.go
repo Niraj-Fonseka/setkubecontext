@@ -14,7 +14,7 @@ import (
 	yaml "gopkg.in/yaml.v2"
 )
 
-type KubernatesConfigView struct {
+type kubernetesConfigView struct {
 	APIVersion string `yaml:"apiVersion"`
 	Clusters   []struct {
 		Cluster struct {
@@ -43,11 +43,11 @@ func main() {
 	kubeConfig.PrintCommandsToRun()
 }
 
-func NewKubeConfigView() *KubernatesConfigView {
-	return &KubernatesConfigView{}
+func NewKubeConfigView() *kubernetesConfigView {
+	return &kubernetesConfigView{}
 }
 
-func (c *KubernatesConfigView) GetKubectlConfig() {
+func (c *kubernetesConfigView) GetKubectlConfig() {
 	cmd := exec.Command("kubectl", "config", "view")
 
 	var out bytes.Buffer
@@ -72,7 +72,7 @@ func (c *KubernatesConfigView) GetKubectlConfig() {
 	c.GetListOfServers()
 }
 
-func (c *KubernatesConfigView) GetListOfServers() {
+func (c *kubernetesConfigView) GetListOfServers() {
 	var clusterList []string
 	for _, cluster := range c.Contexts {
 		clusterList = append(clusterList, cluster.Name)
@@ -80,7 +80,7 @@ func (c *KubernatesConfigView) GetListOfServers() {
 	c.ClusterNameList = clusterList
 }
 
-func (c *KubernatesConfigView) InvokeUserPick() {
+func (c *kubernetesConfigView) InvokeUserPick() {
 	c.PrintListOfClusters()
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Enter the number of the cluster: ")
@@ -103,13 +103,13 @@ func (c *KubernatesConfigView) InvokeUserPick() {
 	}
 }
 
-func (c *KubernatesConfigView) PrintListOfClusters() {
+func (c *kubernetesConfigView) PrintListOfClusters() {
 	for index, clusterName := range c.ClusterNameList {
 		fmt.Printf("(%d) %s \n", index, clusterName)
 	}
 }
 
-func (c *KubernatesConfigView) SetKubeConfig() {
+func (c *kubernetesConfigView) SetKubeConfig() {
 	cmd := exec.Command("kubectl", "config", "use", c.SelectedClusterName)
 
 	var out bytes.Buffer
@@ -123,7 +123,7 @@ func (c *KubernatesConfigView) SetKubeConfig() {
 
 }
 
-func (c *KubernatesConfigView) PrintCommandsToRun() {
-	fmt.Printf("Kubernates context has changed from :%s to %s \n", c.CurrentContext, c.SelectedClusterName)
+func (c *kubernetesConfigView) PrintCommandsToRun() {
+	fmt.Printf("Kubernetes context has changed from :%s to %s \n", c.CurrentContext, c.SelectedClusterName)
 	fmt.Println("Run : kubectl proxy to start the proxy server")
 }
