@@ -69,10 +69,10 @@ func (c *kubernetesConfigView) GetKubectlConfig() {
 		}
 	}
 
-	c.GetListOfServers()
+	c.GetClusterList()
 }
 
-func (c *kubernetesConfigView) GetListOfServers() {
+func (c *kubernetesConfigView) GetClusterList() {
 	var clusterList []string
 	for _, cluster := range c.Contexts {
 		clusterList = append(clusterList, cluster.Name)
@@ -96,7 +96,6 @@ func (c *kubernetesConfigView) InvokeUserPick() {
 	}
 
 	if numberToInt < len(c.ClusterNameList) && !(numberToInt > len(c.ClusterNameList)) && numberToInt >= 0 {
-		fmt.Println("Picked : ", numberToInt)
 		c.SelectedClusterName = c.ClusterNameList[numberToInt]
 	} else {
 		fmt.Println("Number does not fall in the range of available clusters")
