@@ -83,7 +83,7 @@ func (c *kubernetesConfigView) GetClusterList() {
 func (c *kubernetesConfigView) InvokeUserPick() {
 	c.PrintListOfClusters()
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter the number of the cluster: ")
+	fmt.Print("\nEnter the number of the cluster: ")
 	number, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatal(err)
@@ -123,6 +123,5 @@ func (c *kubernetesConfigView) SetKubeConfig() {
 }
 
 func (c *kubernetesConfigView) PrintCommandsToRun() {
-	fmt.Printf("Kubernetes context has changed from :%s to %s \n", c.CurrentContext, c.SelectedClusterName)
-	fmt.Println("Run : kubectl proxy to start the proxy server")
+	fmt.Printf("***  Kubernetes context has changed from :%s to %s ***  \n\n", c.CurrentContext, c.SelectedClusterName)
 }
