@@ -1,4 +1,4 @@
-# SetKubeConfig
+# setkubecontext
 
 Switch between Kubernetes contexts easily
 
