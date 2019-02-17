@@ -6,6 +6,7 @@ Switch between Kubernetes contexts easily
 ```
 go get -u github.com/Niraj-Fonseka/setkubecontext
 ```
+or download the binary from from one of the releases
 
 
 ## Running the app
