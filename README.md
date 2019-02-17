@@ -2,21 +2,20 @@
 
 Switch between Kubernetes contexts easily
 
-[![Build Status](https://travis-ci.org/Niraj-Fonseka/SetKubeConfig.svg?branch=master)](https://travis-ci.org/Niraj-Fonseka/SetKubeConfig)
-
 ## Installation 
 ```
-go get -u github.com/Niraj-Fonseka/SetKubeConfig
+go get -u github.com/Niraj-Fonseka/setkubecontext
 ```
+
 
 ## Running the app
 
 ### MacOS / Linux 
 ```
-cp $GOPATH/bin/SetKubeConfig /usr/local/bin
+cp $GOPATH/bin/setkubecontext /usr/local/bin
 ```
 
 In the terminal run 
 ```
-SetKubeConfig
+setkubecontext
 ```
