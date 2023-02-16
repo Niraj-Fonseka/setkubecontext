@@ -1,4 +1,4 @@
-module github.com/Niraj-OSS/setkubecontext
+module github.com/Niraj-Fonseka/setkubecontext
 
 go 1.14
 
