@@ -2,21 +2,18 @@
 
 Switch between Kubernetes contexts easily
 
-## Installation 
+## Installation
 ```
-go get -u github.com/Niraj-Fonseka/setkubecontext
+go install github.com/Niraj-Fonseka/setkubecontext@latest
 ```
 or download the binary from from one of the releases
 
 
 ## Running the app
 
-### MacOS / Linux 
-```
-cp $GOPATH/bin/setkubecontext /usr/local/bin
-```
+Make sure your `$GOPATH/bin` is in your PATH
 
-In the terminal run 
+In the terminal run
 ```
 setkubecontext
 ```
